@@ -5,7 +5,7 @@ class VeryBestsController < ApplicationController
 
   # GET /very_bests
   def index
-    @very_bests = VeryBest.all
+    @very_bests = current_user.very_bests.page(params[:page]).per(10)
   end
 
   # GET /very_bests/1
