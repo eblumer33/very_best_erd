@@ -1,6 +1,9 @@
 class Dish < ApplicationRecord
   # Direct associations
 
+  has_many   :very_bests,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
