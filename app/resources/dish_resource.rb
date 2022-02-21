@@ -7,6 +7,8 @@ class DishResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :very_bests
+
   # Indirect associations
 
 end
