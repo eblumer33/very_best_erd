@@ -1,0 +1,57 @@
+<% was_validated = dish.errors.any? %>
+
+<%= form_with(model: dish, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for dish_name start -->
+  <div class="form-group">
+    <% dish_name_class = "form-control" %>
+    <% dish_name_was_invalid = dish.errors.include?(:dish_name) %>
+
+    <% if was_validated %>
+      <% if dish_name_was_invalid %>
+        <% dish_name_class << " is-invalid" %>
+      <% else %>
+        <% dish_name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :dish_name %>
+    <!-- Input for dish_name start -->
+    <%= f.text_field :dish_name, class: dish_name_class, placeholder: "Enter dish name" %>
+    <!-- Input for dish_name end -->
+    <% if dish_name_was_invalid %>
+      <% dish.errors.full_messages_for(:dish_name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for dish_name end -->
+  <!-- Label and input for cuisine_type start -->
+  <div class="form-group">
+    <% cuisine_type_class = "form-control" %>
+    <% cuisine_type_was_invalid = dish.errors.include?(:cuisine_type) %>
+
+    <% if was_validated %>
+      <% if cuisine_type_was_invalid %>
+        <% cuisine_type_class << " is-invalid" %>
+      <% else %>
+        <% cuisine_type_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :cuisine_type %>
+    <!-- Input for cuisine_type start -->
+    <%= f.text_field :cuisine_type, class: cuisine_type_class, placeholder: "Enter cuisine type" %>
+    <!-- Input for cuisine_type end -->
+    <% if cuisine_type_was_invalid %>
+      <% dish.errors.full_messages_for(:cuisine_type).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for cuisine_type end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
