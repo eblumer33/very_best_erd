@@ -4,6 +4,8 @@ RSpec.describe VeryBest, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:venue) }
+
     end
 
     describe "InDirect Associations" do
