@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Very Bests
+
+    <a data-toggle="collapse" href="#user_very_bests_new_form">
+      Add very best
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.very_bests.each do |very_best| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <%= link_to very_best, very_best %>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="user_very_bests_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
