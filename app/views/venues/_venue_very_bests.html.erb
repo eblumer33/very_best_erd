@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @venue.very_bests.each do |very_best| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to very_best, very_best %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <% if current_user == very_best.user %>
           <%= link_to very_best, method: :delete do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="venue_very_bests_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "venues/venue_very_bests_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

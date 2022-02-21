@@ -6,31 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @very_best.user.present? %>
           <%= link_to very_best.user, very_best.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Dish</dt>
-      <!-- Display dish_id start -->
       <dd>
         <% if @very_best.dish.present? %>
           <%= link_to very_best.dish, very_best.dish %>
         <% end %>
       </dd>
-      <!-- Display dish_id end -->
 
       <dt>Venue</dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @very_best.venue.present? %>
           <%= link_to very_best.venue, very_best.venue %>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
     </dl>
 
@@ -39,7 +33,6 @@
         <%= link_to_show_or_back very_best, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link very_best start -->
       <div class="col">
         <% if current_user == @very_best.user %>
           <%= link_to edit_very_best_url(very_best), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -47,9 +40,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link very_best end -->
 
-      <!-- Delete link very_best start -->
       <div class="col">
         <% if current_user == @very_best.user %>
           <%= link_to very_best, method: :delete, data: { confirm: "Do you really want to delete this very_best?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -57,7 +48,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link very_best end -->
     </div>
   </div>
 
