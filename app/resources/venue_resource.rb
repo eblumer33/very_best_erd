@@ -9,7 +9,7 @@ class VenueResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :very_bests
+  has_many :very_bests
 
   # Indirect associations
 
@@ -24,10 +24,9 @@ class VenueResource < ApplicationResource
     end
   end
 
-
   filter :user_id, :integer do
     eq do |scope, value|
-      scope.eager_load(:fans).where(:very_bests => {:user_id => value})
+      scope.eager_load(:fans).where(very_bests: { user_id: value })
     end
   end
 end

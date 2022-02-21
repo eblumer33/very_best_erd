@@ -7,7 +7,7 @@ class DishResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :very_bests
+  has_many :very_bests
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class DishResource < ApplicationResource
 
   many_to_many :fans,
                resource: UserResource
-
 end

@@ -1,20 +1,19 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :very_bests,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :favorite_dishes,
-             :through => :very_bests,
-             :source => :dish
+             through: :very_bests,
+             source: :dish
 
   has_many   :expert_preparers,
-             :through => :favorite_dishes,
-             :source => :expert_preparers
+             through: :favorite_dishes,
+             source: :expert_preparers
 
   # Validations
 

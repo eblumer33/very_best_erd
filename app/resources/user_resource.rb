@@ -7,7 +7,7 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :very_bests
+  has_many :very_bests
 
   # Indirect associations
 
@@ -22,10 +22,9 @@ class UserResource < ApplicationResource
     end
   end
 
-
   filter :dish_id, :integer do
     eq do |scope, value|
-      scope.eager_load(:expert_preparers).where(:very_bests => {:dish_id => value})
+      scope.eager_load(:expert_preparers).where(very_bests: { dish_id: value })
     end
   end
 end

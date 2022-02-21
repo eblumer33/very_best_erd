@@ -15,5 +15,4 @@ class VeryBestResource < ApplicationResource
   belongs_to :venue
 
   # Indirect associations
-
 end

@@ -2,17 +2,17 @@ class Dish < ApplicationRecord
   # Direct associations
 
   has_many   :very_bests,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :expert_preparers,
-             :through => :very_bests,
-             :source => :venue
+             through: :very_bests,
+             source: :venue
 
   has_many   :fans,
-             :through => :very_bests,
-             :source => :user
+             through: :very_bests,
+             source: :user
 
   # Validations
 
@@ -21,5 +21,4 @@ class Dish < ApplicationRecord
   def to_s
     dish_name
   end
-
 end

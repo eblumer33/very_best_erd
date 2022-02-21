@@ -1,22 +1,16 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Venue, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should have_many(:very_bests) }
+  end
 
-    end
-
-    describe "InDirect Associations" do
-
+  describe "InDirect Associations" do
     it { should have_many(:popular_dishes) }
 
     it { should have_many(:fans) }
+  end
 
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end
