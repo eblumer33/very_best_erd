@@ -6,6 +6,10 @@ class Venue < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :popular_dishes,
+             :through => :very_bests,
+             :source => :dish
+
   has_many   :fans,
              :through => :popular_dishes,
              :source => :fans

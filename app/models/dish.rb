@@ -6,6 +6,10 @@ class Dish < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :expert_preparers,
+             :through => :very_bests,
+             :source => :venue
+
   has_many   :fans,
              :through => :very_bests,
              :source => :user
