@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :expert_preparers,
+             :through => :favorite_dishes,
+             :source => :expert_preparers
+
   # Validations
 
   # Scopes

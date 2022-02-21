@@ -10,6 +10,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:expert_preparers) }
+
     end
 
     describe "Validations" do
