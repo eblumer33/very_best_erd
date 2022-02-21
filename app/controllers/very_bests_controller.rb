@@ -5,7 +5,8 @@ class VeryBestsController < ApplicationController
 
   # GET /very_bests
   def index
-    @very_bests = current_user.very_bests.page(params[:page]).per(10)
+    @q = current_user.very_bests.ransack(params[:q])
+    @very_bests = @q.result(:distinct => true).includes(:venue, :dish, :user).page(params[:page]).per(10)
   end
 
   # GET /very_bests/1

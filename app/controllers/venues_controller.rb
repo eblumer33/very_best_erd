@@ -3,7 +3,8 @@ class VenuesController < ApplicationController
 
   # GET /venues
   def index
-    @venues = Venue.page(params[:page]).per(10)
+    @q = Venue.ransack(params[:q])
+    @venues = @q.result(:distinct => true).includes(:very_bests, :fans, :popular_dishes).page(params[:page]).per(10)
   end
 
   # GET /venues/1
