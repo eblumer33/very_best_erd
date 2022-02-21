@@ -13,6 +13,9 @@ class VenueResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :popular_dishes,
+               resource: DishResource
+
   has_many :fans, resource: UserResource do
     assign_each do |venue, users|
       users.select do |u|

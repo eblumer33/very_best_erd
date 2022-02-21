@@ -11,6 +11,9 @@ class DishResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :expert_preparers,
+               resource: VenueResource
+
   many_to_many :fans,
                resource: UserResource
 
